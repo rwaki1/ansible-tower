@@ -1,7 +1,7 @@
 ---
 - name: Transfer and execute a script.
   gather_facts: false
-  hosts: Ers_Dbs
+  hosts: ers_db 
   become: yes
   tasks:
      - name: Transfer the script
