@@ -1,6 +1,5 @@
 ---
 - name: Transfer and execute a script.
-  gather_facts: false
   hosts: all 
   become: yes
   tasks:
