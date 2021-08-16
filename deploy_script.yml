@@ -1,6 +1,6 @@
 ---
 - name: Hello World Sample
-  hosts: all
+  hosts: ers_db
   tasks:
     - name: Hello Message
       debug:
