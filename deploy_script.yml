@@ -5,7 +5,7 @@
   tasks:
     - name: Transfer the script
       fetch: 
-        src: "/home/rwadmin/hardning.sh" 
-        dest: "/home/rwadmin/hardning.sh" 
+        src=/home/rwadmin/hardning.sh 
+        dest=/home/rwadmin/hardning.sh 
         remote_src: true  
         mode: 0777
