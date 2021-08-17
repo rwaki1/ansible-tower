@@ -1,11 +1,10 @@
 ---
-- name: Transfer and execute a script.
-  hosts: all
+-
   become: yes
+  hosts: all
   tasks:
-    - name: Transfer the script
-      fetch: 
-        src=/home/rwadmin/hardning.sh 
-        dest=/home/rwadmin/hardning.sh 
-        remote_src: true  
+    - name: copy latest CodeDeploy Agent file
+      template:
+        dest: /home/rwadmin/hardning.sh
         mode: 0777
+        src: /home/rwadmin/hardning.sh
