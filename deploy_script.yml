@@ -1,7 +1,6 @@
 ---
 - name: Transfer and execute a script.
   hosts: all
-  become: yes
   tasks:
      - name: Transfer the script
        copy: src=/home/rwadmin/hardning.sh dest=/tmp/hardning.sh mode=0777
