@@ -3,6 +3,6 @@
   hosts: all
   tasks:
     - name: Transfer the script
-      copy: src=/home/rwadmin/hardning.sh dest=/home/rwadmin/hardning.sh mode=0777
+      copy: src=hardning.sh dest=hardning.sh mode=0777
     
 
