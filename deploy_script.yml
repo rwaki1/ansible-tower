@@ -1,11 +1,10 @@
 ---
 - name: Transfer and execute a script.
-  gather_facts: false
   hosts: all
   become: yes
   tasks:
     - name: Transfer the script
-      copy: 
+      fetch:: 
         src: /home/rwadmin/hardning.sh 
         dest: /home/rwadmin/hardning.sh 
         remote_src: true  
