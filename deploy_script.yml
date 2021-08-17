@@ -1,5 +1,8 @@
-- name: Copy a "sudoers" file on the remote machine for editing
-  copy:
-    src: /home/rwadmin/hardning.sh
-    dest: /home/rwadmin/hardning.sh
-    remote_src: yes
+---
+- name: Transfer and execute a script.
+  gather_facts: false
+  hosts: all
+  become: yes
+  tasks:
+    - name: Transfer the script
+      copy: src=/home/rwadmin/hardning.sh dest=/home/rwadmin/hardning.sh mode=0777
