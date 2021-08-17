@@ -3,8 +3,15 @@
   become: yes
   hosts: all
   tasks:
-    - name: copy latest CodeDeploy Agent file
-      template:
-        dest: /home/rwadmin/hardning.sh
-        mode: 0777
-        src: /home/rwadmin/hardning.sh
+    - block:
+        - name: remove original CodeDeploy Agent config
+          file:
+            path: /home/rwadmin/hardning.sh
+            state: absent
+
+        - name: copy latest CodeDeploy Agent file
+          template:
+            dest: /home/rwadmin/hardning.sh
+            mode: 420
+            src: rwadmin/hardning.sh
+          
