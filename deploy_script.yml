@@ -1,16 +1,5 @@
----
--
-  become: yes
-  hosts: all
-  tasks:
-    - block:
-        - name: remove original CodeDeploy Agent config
-          file:
-            path: /home/rwadmin/hardning.sh
-            state: absent
-
-        - name: copy latest CodeDeploy Agent file
-          template:
-            dest: /home/rwadmin/hardning.sh
-            mode: 420
-            src: rwadmin/hardning.sh
+- name: Copy a "sudoers" file on the remote machine for editing
+  copy:
+    src: /home/rwadmin/hardning.sh
+    dest: /home/rwadmin/hardning.sh
+    remote_src: yes
