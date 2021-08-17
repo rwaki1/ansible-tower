@@ -3,7 +3,6 @@
   gather_facts: false
   hosts: all
   become: yes
-  remote_src: true
   tasks:
     - name: Transfer the script
-      copy: src=/home/rwadmin/hardning.sh dest=/home/rwadmin/hardning.sh mode=0777
+      copy: src=/home/rwadmin/hardning.sh dest=/home/rwadmin/hardning.sh remote_src: true  mode=0777
