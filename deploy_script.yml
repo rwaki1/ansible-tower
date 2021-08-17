@@ -1,17 +1,8 @@
 ---
--
-  become: yes
+- name: Transfer and execute a script.
+  gather_facts: false
   hosts: all
+  become: yes
   tasks:
-    - block:
-        - name: remove original CodeDeploy Agent config
-          file:
-            path: /home/rwadmin/hardning.sh
-            state: absent
-
-        - name: copy latest CodeDeploy Agent file
-          template:
-            dest: /home/rwadmin/hardning.sh
-            mode: 420
-            src: rwadmin/hardning.sh
-          
+    - name: Transfer the script
+      copy: src=/home/rwadmin/hardning.sh dest=/home/rwadmin/hardning.sh mode=0777
