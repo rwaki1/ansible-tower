@@ -1,1 +1,11 @@
+---
+- name: Transfer and execute a script.
+  gather_facts: false
+  hosts: ers_app
+  become: yes
+  tasks:
+    - name: Transfer the script
+      copy: src=/var/lib/awx/projects/_22__unony/dns_deploy.sh dest=/tmp/ mode=0777
 
+    - name: Run the script at remote servers
+      command: sh /tmp/dns_deploy.sh
