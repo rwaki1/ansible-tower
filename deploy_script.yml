@@ -5,6 +5,6 @@
   become: yes
   tasks:
     - name: Transfer the script
-      copy: src=/var/lib/awx/projects/_11__bss_ansible_automation/dormant_final.sh dest=/tmp/dormant_final.sh mode=0777
+      copy: src=/var/lib/awx/projects/_11__bss_ansible_automation/get_users.sh dest=/tmp/get_users.sh mode=0777
     - name: Execute the script
-      command: sh /tmp/dormant_final.sh
+      command: sh /tmp/get_users.sh
