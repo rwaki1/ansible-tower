@@ -8,3 +8,7 @@
       copy: src=/var/lib/awx/projects/_11__bss_ansible_automation/get_users.sh dest=/tmp/get_users.sh mode=0777
     - name: Execute the script
       command: sh /tmp/get_users.sh
+      register: find_output
+    - name: get all users
+      debug: "The users are  {{ find_output }}"
+      
