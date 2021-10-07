@@ -1,0 +1,12 @@
+---
+- name: Transfer and execute a script.
+  gather_facts: false
+  hosts: all
+  become: yes
+  tasks:
+    - name: Collecting output from sudo File
+      command: cat /etc/sudoers
+      register: find_output
+    - name: get all users
+      debug: 
+        msg: "The users are  {{ find_output }}"
